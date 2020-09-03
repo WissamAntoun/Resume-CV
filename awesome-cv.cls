@@ -404,7 +404,7 @@
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{3mm}
+\newcommand{\acvSectionTopSkip}{0mm}
 \newcommand{\acvSectionContentTopSkip}{2.5mm}
 
 
@@ -690,6 +690,10 @@
   \vspace{-4.0mm}
 }
 
+\colorlet{body}{black!80!white}
+\newcommand{\cvtag}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+}
 
 %-------------------------------------------------------------------------------
 %                Commands for elements of Cover Letter
