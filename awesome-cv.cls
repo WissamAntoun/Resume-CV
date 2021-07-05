@@ -801,6 +801,11 @@
     \printfield{year}%
     \newunit%
   }
+  {%
+      \fontsize{8pt}{1em}\bodyfontlight%
+      \textbf{\printfield{note}}%
+      \newunit%
+  }
   \par\vspace{0.8\baselineskip}
 }
 
@@ -820,6 +825,11 @@
     \printlist{location}%
     \newunit%
   }
+  {%
+      \fontsize{8pt}{1em}\bodyfontlight%
+      \textbf{\printfield{note}}%
+      \newunit%
+  }
   \par\vspace{0.3\baselineskip}
 }
 
@@ -831,7 +841,7 @@
   \par%
   \newblock%
   {%
-    \fontsize{8pt}{1em}\bodyfontlight\color{graytext}%
+    \fontsize{9pt}{1em}\bodyfontlight\color{graytext}%
     \printfield{booktitle}%
     \setunit{\addcomma\space}%
     \printfield{year}%
@@ -853,12 +863,15 @@
     \fontsize{8pt}{1em}\bodyfontlight\color{awesome}%
     \printfield{booktitle}%
     \setunit*{\addcomma\space}%
-    \printfield{note}%
-    \setunit*{\addcomma\space}%
     \printfield{year}%
     \setunit{\addcomma\space}%
     \printlist{location}%
     \newunit%
+  }
+  {%
+      \fontsize{8pt}{1em}\bodyfontlight%
+      \textbf{\printfield{note}}%
+      \newunit%
   }
   \par\vspace{0.3\baselineskip}
 }
