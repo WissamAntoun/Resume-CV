@@ -404,8 +404,8 @@
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{0mm}
-\newcommand{\acvSectionContentTopSkip}{2.5mm}
+\newcommand{\acvSectionTopSkip}{1.5mm}
+\newcommand{\acvSectionContentTopSkip}{1.5mm}
 
 
 %-------------------------------------------------------------------------------
@@ -571,7 +571,7 @@
 % Usage: \cvsection{<section-title>}
 \newcommand{\cvsection}[1]{%
   \vspace{\acvSectionTopSkip}
-  \vspace{-1mm}
+  \vspace{0mm}
   \sectionstyle{#1}
   \phantomsection
   \color{gray}\vhrulefill{0.9pt}
@@ -581,7 +581,7 @@
 % Usage: \cvsubsection{<subsection-title>}
 \newcommand{\cvsubsection}[1]{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+  \vspace{0mm}
   \subsectionstyle{#1}
   \phantomsection
 }
@@ -589,7 +589,7 @@
 % Define a paragraph for CV
 \newenvironment{cvparagraph}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+  \vspace{0mm}
   \paragraphstyle
 }{%
   \par
@@ -645,7 +645,7 @@
 % Define an environment for cvhonor
 \newenvironment{cvhonors}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-2mm}
+  \vspace{0mm}
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
@@ -801,37 +801,52 @@
     \printfield{year}%
     \newunit%
   }
-  {%
-      \fontsize{8pt}{1em}\bodyfontlight%
-      \textbf{\printfield{note}}%
-      \newunit%
-  }
   \par\vspace{0.8\baselineskip}
 }
 
+% \DeclareBibliographyDriver{inproceedings}{%
+%   \fontsize{9pt}{1em}\bodyfont%
+%   \printfield{title}%
+%   \newblock%
+%   \printnames{author}%
+%   \par%
+%   \newblock%
+%   {%
+%     \fontsize{8pt}{1em}\bodyfontlight\color{awesome}%
+%     \printfield{booktitle}%
+%     \setunit{\addcomma\space}%
+%     \printfield{year}%
+%     \setunit{\addcomma\space}%
+%     \printlist{location}%
+%     \newunit%
+%   }
+%   \par\vspace{0.3\baselineskip}
+% }
+
 \DeclareBibliographyDriver{inproceedings}{%
   \fontsize{9pt}{1em}\bodyfont%
-  \printfield{title}%
+  \printfield{title}
   \newblock%
   \printnames{author}%
+  {
+    \fontsize{9pt}{1em}\bodyfontlight\color{awesome}
+    \hfill\printfield{year}
+  }
   \par%
   \newblock%
   {%
     \fontsize{8pt}{1em}\bodyfontlight\color{awesome}%
     \printfield{booktitle}%
     \setunit{\addcomma\space}%
-    \printfield{year}%
-    \setunit{\addcomma\space}%
+    % \printfield{year}%
+    % \setunit{\addcomma\space}%
     \printlist{location}%
-    \newunit%
+    % \newunit%
   }
-  {%
-      \fontsize{8pt}{1em}\bodyfontlight%
-      \textbf{\printfield{note}}%
-      \newunit%
-  }
+  \hfill\textbf{\printfield{note}}
   \par\vspace{0.3\baselineskip}
 }
+
 
 \DeclareBibliographyDriver{incollection}{%
   \fontsize{9pt}{1em}\bodyfont%
@@ -841,7 +856,7 @@
   \par%
   \newblock%
   {%
-    \fontsize{9pt}{1em}\bodyfontlight\color{graytext}%
+    \fontsize{8pt}{1em}\bodyfontlight\color{graytext}%
     \printfield{booktitle}%
     \setunit{\addcomma\space}%
     \printfield{year}%
@@ -863,15 +878,12 @@
     \fontsize{8pt}{1em}\bodyfontlight\color{awesome}%
     \printfield{booktitle}%
     \setunit*{\addcomma\space}%
+    \printfield{note}%
+    \setunit*{\addcomma\space}%
     \printfield{year}%
     \setunit{\addcomma\space}%
     \printlist{location}%
     \newunit%
-  }
-  {%
-      \fontsize{8pt}{1em}\bodyfontlight%
-      \textbf{\printfield{note}}%
-      \newunit%
   }
   \par\vspace{0.3\baselineskip}
 }
